@@ -146,17 +146,22 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
+
+      // likedPosts bug fixing
+      document.getElementById( "liked" ).textContent = '';
+
     likedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
     });
 };
 
-      
-document.getElementById("reported").innerHTML = "";
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
+
+    // report bug fixing
+    document.getElementById( "reported" ).textContent = '';
 
     reportedPosts.forEach(post => {
         const div = createPost(post);
